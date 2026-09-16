@@ -1,16 +1,39 @@
 # ddiaz-site-slim
 
-Personal academic site for Daniel Diaz. One page, one stylesheet, no build step.
+Personal site for Daniel Diaz. One HTML file, one stylesheet, no build step.
 
 ```
-index.html          everything
-assets/style.css    ~135 lines
+index.html               everything
+assets/style.css         ~170 lines
+assets/img/portrait.jpg  800x800
 assets/CV_DanielDiaz.pdf
-assets/img/         portrait goes here
 ```
 
-Edit `index.html` directly. There is no templating, no generator and nothing to
-install — the sections are plain HTML in the order they appear on the page.
+## Layout
+
+A sticky identity rail on the left (photo, name, links, "previously") beside a
+wide content column that uses the full browser width rather than a narrow
+centred measure:
+
+- **Intro** — narrative, not a summary of credentials
+- **What I work on** — four research blocks, two across on wide screens
+- **Selected work | Recent** — side by side, papers left, news right
+- **Students** — two columns of prose
+
+Deliberately *not* here: education tables, service lists, talk lists, teaching
+tables. That material lives in the CV PDF, which is linked from the rail. The
+page is meant to say what the work is, not to enumerate the record.
+
+Breakpoints account for the 280 px rail, not just the viewport — the
+`Selected work | Recent` split only goes two-up at 75 rem, because below that
+the content column is too narrow for two readable columns.
+
+## Theme
+
+Light by default, whatever the visitor's OS prefers. The toggle in the rail
+switches to dark and the choice is remembered in `localStorage`. A small inline
+script in `<head>` applies the stored preference before first paint so there is
+no flash.
 
 ## Publish
 
@@ -18,20 +41,18 @@ install — the sections are plain HTML in the order they appear on the page.
 gh repo create ddiaz-site-slim --public --source=. --remote=origin --push
 ```
 
-Then **Settings → Pages → Deploy from a branch → `main` / `(root)`**. It appears
+Then **Settings → Pages → Deploy from a branch → `main` / `(root)`**. It lands
 at `https://ddiaz006.github.io/ddiaz-site-slim/`.
 
-To make it your main site instead, rename the repository to
-`ddiaz006.github.io` — every path here is relative, so it works at either
-address. Update the two `og:url` / `canonical` tags in `index.html` if you do.
+To make it the main site, rename the repository to `ddiaz006.github.io`. Every
+path is relative, so it works at either address — update the `canonical` and
+`og:url` tags in `index.html` if you do.
 
-## Still to do
+## Keeping it current
 
-- [ ] Drop a square photo at `assets/img/portrait.jpg`, then replace the
-      placeholder `<div class="portrait portrait-ph">…</div>` with
-      `<img class="portrait" src="assets/img/portrait.jpg" alt="Daniel Diaz">`
-- [ ] Add a news entry whenever something happens — it is the section people
-      actually check to see whether a site is maintained
+Add a `<div>` to the `Recent` list when something happens. That section is what
+tells a visitor the site is maintained, and it is the only part that goes stale
+on its own.
 
 ## Local preview
 
