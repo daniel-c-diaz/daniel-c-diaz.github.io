@@ -124,6 +124,29 @@
       </div>
     </section>
 
+    <section>
+      <h2>One event</h2>
+      <figure class="ed">
+        <div class="ed-frame" id="ed-frame">
+          <img class="ed-poster" src="assets/img/event-display.png"
+               alt="CMS event display: a Higgs boson candidate produced with a Z boson. Two green tracks are the electrons from the Z decay; yellow cones are jets from long-lived particles decaying away from the collision point."
+               width="750" height="673">
+          <button class="ed-play" type="button" id="ed-play"
+                  aria-label="Load the interactive 3D event display from CERN">
+            <span class="ed-play-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M21 3v6h-6"/><circle cx="12" cy="12" r="2.5"/></svg>
+              Rotate it yourself
+            </span>
+            <span class="ed-play-note">loads the interactive display from CERN</span>
+          </button>
+        </div>
+        <figcaption>
+          <b>A candidate event from the search I led.</b> Real data recorded by CMS on 8 August 2017 (run 300636). A Z boson decays to an electron&ndash;positron pair (green); the Higgs boson decays to two long-lived particles that travel before decaying into jets (yellow cones), leaving secondary vertices displaced from the collision point.
+          <span class="credit">Image and 3D display by the CMS Collaboration for <a href="http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/EXO-20-003/index.html">EXO&#8209;20&#8209;003</a> &middot; <a href="https://cms3d.web.cern.ch/EXO-20-003/">interactive version</a> &middot; <a href="https://cms.cern/news/live-long-and-prosper-searching-long-lived-relatives-higgs-boson">CMS feature</a> &middot; paper: <a href="https://arxiv.org/abs/2110.13218">arXiv:2110.13218</a></span>
+        </figcaption>
+      </figure>
+    </section>
+
     <div class="split" style="margin-top:clamp(2.75rem,5vw,4rem)">
       <section>
         <h2>Selected work</h2>
@@ -210,6 +233,29 @@
   Daniel Diaz &middot; <a href="mailto:d4diaz@ucsd.edu">d4diaz@ucsd.edu</a> &middot; San Diego Supercomputer Center, UC San Diego
 </footer>
 
+<script>
+/* Click-to-load the CERN event display. Keeps the page instant, avoids a
+   third-party request until the visitor asks for one, and sidesteps the fact
+   that the CMS viewer's overlay text collides with itself in a narrow frame:
+   below 60rem we open it in a tab instead of embedding it. */
+(function () {
+  var frame = document.getElementById("ed-frame");
+  var btn = document.getElementById("ed-play");
+  if (!frame || !btn) return;
+  var SRC = "https://cms3d.web.cern.ch/EXO-20-003/";
+
+  btn.addEventListener("click", function () {
+    if (window.innerWidth < 960) { window.open(SRC, "_blank", "noopener"); return; }
+    var f = document.createElement("iframe");
+    f.src = SRC;
+    f.title = "Interactive 3D display of a CMS collision event";
+    f.referrerPolicy = "no-referrer";
+    frame.classList.add("is-live");
+    frame.appendChild(f);
+    btn.remove();
+  });
+})();
+</script>
 <script>
 (function () {
   var root = document.documentElement;
