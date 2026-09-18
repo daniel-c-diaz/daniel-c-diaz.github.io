@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Daniel Diaz</title>
-<meta name="description" content="Daniel Diaz is an experimental particle physicist at UC San Diego and a member of the CMS Collaboration, searching for long-lived particles and dark sectors at the LHC with machine learning.">
+<meta name="description" content="Daniel Diaz works at the intersection of particle physics and machine learning at UC San Diego: searches for long-lived particles and dark sectors with CMS, real-time neural networks on FPGAs, graph neural networks for physics, and AI infrastructure for science.">
 <meta name="author" content="Daniel Diaz">
 <link rel="canonical" href="https://ddiaz006.github.io/ddiaz-site-slim/">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Daniel Diaz">
-<meta property="og:description" content="Searching for long-lived particles and dark sectors with CMS at the LHC. Machine learning for real-time physics.">
+<meta property="og:description" content="Particle physics and machine learning: long-lived particle searches with CMS, real-time ML on FPGAs, and AI infrastructure for science.">
 <meta property="og:url" content="https://ddiaz006.github.io/ddiaz-site-slim/">
 <meta property="og:image" content="https://ddiaz006.github.io/ddiaz-site-slim/assets/img/portrait.jpg">
 <meta name="twitter:card" content="summary">
@@ -29,7 +29,7 @@
   "image": "https://ddiaz006.github.io/ddiaz-site-slim/assets/img/portrait.jpg",
   "affiliation": { "@type": "Organization", "name": "San Diego Supercomputer Center, University of California San Diego" },
   "email": "mailto:d4diaz@ucsd.edu",
-  "knowsAbout": ["High energy physics", "Long-lived particles", "Dark sectors", "CMS experiment", "Machine learning", "Level-1 trigger", "FPGAs"],
+  "knowsAbout": ["High energy physics", "Machine learning", "Graph neural networks", "Real-time machine learning", "FPGAs", "hls4ml", "Anomaly detection", "Explainable AI", "FAIR data and AI models", "Large language model infrastructure", "Long-lived particles", "Dark sectors", "CMS experiment", "Level-1 trigger"],
   "identifier": { "@type": "PropertyValue", "propertyID": "ORCID", "value": "0000-0001-6834-1176" },
   "sameAs": [
     "https://orcid.org/0000-0001-6834-1176",
@@ -49,7 +49,7 @@
     <div class="identity">
       <h1><b>Daniel</b> Diaz</h1>
       <p class="role">
-        <b>Experimental particle physicist</b>
+        <b>Particle physics and machine learning</b>
         San Diego Supercomputer Center, UC San Diego<br>
         CMS Collaboration, CERN
       </p>
@@ -81,11 +81,11 @@
 
     <div class="intro">
       <div class="text">
-      <p class="lede">Most searches at the LHC assume that a new particle decays the instant it is produced. My research is about the particles that don't.</p>
+      <p class="lede">Most searches at the LHC assume that a new particle decays the instant it is produced. My research is about the particles that don't, and the machine learning it takes to find them.</p>
 
       <p>Many dark sector models connect to the Standard Model through a weak portal, and a weak coupling usually means a long lifetime. Such a particle can travel millimetres to metres before it decays, leaving displaced vertices, delayed or trackless jets, or showers deep in the detector. Standard triggers and reconstruction are optimized for decays at the collision point, so these signatures are easy to lose.</p>
 
-      <p>My work addresses this in two ways: searches designed for those displaced signatures, and machine-learning algorithms for the real-time trigger so that such events are recorded in the first place.</p>
+      <p>Machine learning runs through all of my work: neural networks on FPGAs that decide in real time which collisions to keep, taggers that separate long-lived particle signatures from background in offline analysis, graph neural network methods for physics, and the computing infrastructure and open standards that let others reuse these models. I co-convene the CMS Machine Learning Knowledge subgroup, which maintains machine-learning practice across the collaboration.</p>
       </div>
 
       <figure class="fig">
@@ -101,23 +101,37 @@
     </div>
 
     <section>
-      <h2>What I work on</h2>
+      <h2>Machine learning</h2>
       <div class="grid-2">
         <div>
-          <h3>Searches for long-lived particles</h3>
-          <p>I led a CMS search for long-lived particles produced in association with a Z boson and decaying to displaced jets in the tracker. Triggering on the Z improved the sensitivity to light particles, down to about 15 GeV, compared with searches in gluon fusion. I also helped develop a different approach that uses the endcap muon detectors as a sampling calorimeter: the decay products of a long-lived particle shower in the steel and leave a dense cluster of hits, with very little Standard Model background. The first search using this method set the most stringent limits at the time on Higgs boson decays to long-lived particles with proper decay lengths above roughly 6 to 40 m, depending on the mass.</p>
+          <h3>Real-time neural networks on FPGAs</h3>
+          <p>The CMS Level-1 trigger has a few microseconds to decide which of 40 million bunch crossings per second to keep, so any model running there has to fit in FPGA firmware. During my postdoc I started work on the Phase-2 upgrade of this trigger and set up an FPGA test stand at UC San Diego. I led a team of graduate and undergraduate students developing a convolutional neural network that tags long-lived particle decays in the tracker and calorimeters, and we used deep neural networks to improve the real-time calculation of missing transverse energy. The models are built in standard deep-learning frameworks, compiled to firmware with <code>hls4ml</code>, and iterated until they meet the trigger's latency and resource limits.</p>
         </div>
         <div>
-          <h3>Machine learning inside the trigger</h3>
-          <p>At the LHC, bunches of protons cross 40 million times a second. The Level-1 trigger, built from custom electronics, has a few microseconds to decide which crossings to keep and cuts the rate to about 100,000 per second; software then keeps about a thousand. Anything rejected is gone. I develop neural networks for the Level-1 trigger, including displaced-jet taggers and learned missing-energy algorithms, and test them on FPGAs using <code>hls4ml</code>, so that the signatures I search for are not discarded before anyone can study them.</p>
+          <h3>Machine learning for long-lived particle searches</h3>
+          <p>In offline analysis I develop methods that pick long-lived particle signatures out of large backgrounds. For particles decaying in the CMS muon system, I supervise the development of neural-network and boosted-decision-tree taggers that identify the resulting showers and measure their energy, and my students have extended this work to graph convolutional networks.</p>
+        </div>
+        <div>
+          <h3>Graph neural networks and interpretability</h3>
+          <p>I have also worked on machine-learning methods for particle physics more broadly. With collaborators I worked on graph-based autoencoders for anomaly detection on jets, using a graph neural network as a differentiable, learned approximation of the energy mover's distance, and on adapting layerwise relevance propagation to explain the decisions of a graph neural network that performs particle-flow reconstruction. Both appeared at the NeurIPS 2021 Machine Learning and the Physical Sciences workshop. I also studied how graph neural network jet taggers improve the sensitivity to Higgs boson pair production at the FCC-hh.</p>
+        </div>
+        <div>
+          <h3>AI infrastructure and FAIR models</h3>
+          <p>At the San Diego Supercomputer Center I operate large-scale, Kubernetes-based analysis infrastructure on the National Research Platform, including self-hosted open-weight large language models, for a broad community of scientists with ML- and data-intensive workflows, and I develop tutorials on running AI workloads there. Through the FAIR4HEP project I helped develop guidance for making AI models and datasets in high energy physics findable, accessible, interoperable and reusable. A trained model is a scientific result and ought to behave like one.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Searches for new physics</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Long-lived particles in the tracker and muon system</h3>
+          <p>I led a CMS search for long-lived particles produced in association with a Z boson and decaying to displaced jets in the tracker. Triggering on the Z improved the sensitivity to light particles, down to about 15 GeV, compared with searches in gluon fusion. I also helped develop a different approach that uses the endcap muon detectors as a sampling calorimeter: the decay products of a long-lived particle shower in the steel and leave a dense cluster of hits, with very little Standard Model background. The first search using this method set the most stringent limits at the time on Higgs boson decays to long-lived particles with proper decay lengths above roughly 6 to 40 m, depending on the mass.</p>
         </div>
         <div>
           <h3>Light long-lived particles in B-parking data</h3>
           <p>Most recently I led a search in the 2018 CMS B-parking dataset, about ten billion b-hadron decays recorded for B physics. Because b hadrons are produced in pairs, one can fire the trigger while the other decays without any trigger bias, which makes the dataset sensitive to light particles produced in b-hadron decays. The search set the most stringent limits to date on B&nbsp;&rarr;&nbsp;K&Phi; decays, where &Phi; is a long-lived particle of 0.3 to 3&nbsp;GeV that decays to hadrons. I built the analysis framework and the background estimate, and supervised two graduate students and an undergraduate on the analysis.</p>
-        </div>
-        <div>
-          <h3>Research computing and FAIR practice</h3>
-          <p>At SDSC I work on the large-scale AI and computing infrastructure that data-intensive science runs on, including the National Research Platform. It connects back to the physics through one conviction: a trained model is a scientific result and ought to behave like one. Through the FAIR4HEP project I helped develop a guide for making AI models in high energy physics findable, accessible, interoperable and reusable.</p>
         </div>
       </div>
     </section>
@@ -145,48 +159,83 @@
       </figure>
     </section>
 
+    <section>
+      <h2>Selected work</h2>
+      <div class="grid-2 pubcols">
+        <div>
+          <h3 class="pubhead">Machine learning</h3>
+          <div class="pub">
+            <a class="t" href="https://arxiv.org/abs/2203.07353">Improving di-Higgs sensitivity at future colliders in hadronic final states with machine learning</a>
+            <span class="meta">A. Apresyan, <b>D. Diaz</b>, J. Duarte <em>et al.</em> &middot; Snowmass 2021 &middot; arXiv:2203.07353</span>
+          </div>
+          <div class="pub">
+            <a class="t" href="https://arxiv.org/abs/2111.12849">Particle graph autoencoders and differentiable, learned energy mover&rsquo;s distance</a>
+            <span class="meta">S. Tsan, R. Kansal, A. Aportela, <b>D. Diaz</b> <em>et al.</em> &middot; NeurIPS 2021 Machine Learning and the Physical Sciences workshop &middot; arXiv:2111.12849</span>
+          </div>
+          <div class="pub">
+            <a class="t" href="https://arxiv.org/abs/2111.12840">Explaining machine-learned particle-flow reconstruction</a>
+            <span class="meta">F. Mokhtar, R. Kansal, <b>D. Diaz</b> <em>et al.</em> &middot; NeurIPS 2021 Machine Learning and the Physical Sciences workshop &middot; arXiv:2111.12840</span>
+          </div>
+          <div class="pub">
+            <a class="t" href="https://arxiv.org/abs/2512.01463">hls4ml: A flexible, open-source platform for deep learning acceleration on reconfigurable hardware</a>
+            <span class="meta">J.-F. Schulte <em>et al.</em> &middot; preprint, 2025 &middot; arXiv:2512.01463</span>
+          </div>
+          <div class="pub">
+            <a class="t" href="https://arxiv.org/abs/2406.19522">Reliable edge machine learning hardware for scientific applications</a>
+            <span class="meta">T. Baldi <em>et al.</em> &middot; 2024 IEEE VLSI Test Symposium (VTS) &middot; arXiv:2406.19522</span>
+          </div>
+          <div class="pub">
+            <a class="t" href="https://arxiv.org/abs/2212.05081">FAIR AI models in high energy physics</a>
+            <span class="meta">J. Duarte <em>et al.</em> &middot; <em>Mach. Learn.: Sci. Technol.</em> 4, 045062 (2023) &middot; arXiv:2212.05081</span>
+          </div>
+          <div class="pub">
+            <a class="t" href="https://arxiv.org/abs/2108.02214">A FAIR and AI-ready Higgs boson decay dataset</a>
+            <span class="meta">Y. Chen <em>et al.</em> &middot; <em>Sci. Data</em> 9, 31 (2022) &middot; arXiv:2108.02214</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="pubhead">Physics</h3>
+          <div class="pub">
+            <a class="t" href="https://arxiv.org/abs/2508.06363">Search for b-hadron decays to long-lived particles in the CMS endcap muon detectors</a>
+            <span class="meta"><span class="role">Analysis lead</span> CMS Collaboration &middot; <em>Phys. Rev. D</em> 113, 012009 (2026) &middot; arXiv:2508.06363</span>
+          </div>
+          <div class="pub">
+            <a class="t" href="https://arxiv.org/abs/2402.01898">Search for long-lived particles decaying in the CMS muon detectors in proton-proton collisions at &radic;s = 13 TeV</a>
+            <span class="meta">CMS Collaboration &middot; <em>Phys. Rev. D</em> 110, 032007 (2024) &middot; arXiv:2402.01898</span>
+          </div>
+          <div class="pub">
+            <a class="t" href="https://arxiv.org/abs/2110.13218">Search for long-lived particles produced in association with a Z boson in proton-proton collisions at &radic;s = 13 TeV</a>
+            <span class="meta"><span class="role">Analysis lead</span> CMS Collaboration &middot; <em>JHEP</em> 03 (2022) 160 &middot; arXiv:2110.13218</span>
+          </div>
+          <div class="pub">
+            <a class="t" href="https://arxiv.org/abs/2107.04838">Search for long-lived particles decaying in the CMS end cap muon detectors in proton-proton collisions at &radic;s = 13 TeV</a>
+            <span class="meta">CMS Collaboration &middot; <em>Phys. Rev. Lett.</em> 127, 261804 (2021) &middot; arXiv:2107.04838</span>
+          </div>
+          <div class="pub">
+            <a class="t" href="https://arxiv.org/abs/2405.13778">Dark sector searches with the CMS experiment</a>
+            <span class="meta">CMS Collaboration &middot; <em>Phys. Rept.</em> 1115, 448 (2025) &middot; arXiv:2405.13778</span>
+          </div>
+        </div>
+      </div>
+      <p class="note">CMS papers carry the full collaboration as authors; analyses I led are marked. Complete list on <a href="https://inspirehep.net/authors/1615062">INSPIRE-HEP</a>.</p>
+    </section>
+
     <div class="split" style="margin-top:clamp(2.75rem,5vw,4rem)">
       <section>
-        <h2>Selected work</h2>
-
-        <div class="pub">
-          <a class="t" href="https://arxiv.org/abs/2508.06363">Search for b-hadron decays to long-lived particles in the CMS endcap muon detectors</a>
-          <span class="meta"><span class="role">Analysis lead</span> CMS Collaboration &middot; <em>Phys. Rev. D</em> 113, 012009 (2026) &middot; arXiv:2508.06363</span>
-        </div>
-        <div class="pub">
-          <a class="t" href="https://arxiv.org/abs/2402.01898">Search for long-lived particles decaying in the CMS muon detectors in proton-proton collisions at &radic;s = 13 TeV</a>
-          <span class="meta">CMS Collaboration &middot; <em>Phys. Rev. D</em> 110, 032007 (2024) &middot; arXiv:2402.01898</span>
-        </div>
-        <div class="pub">
-          <a class="t" href="https://arxiv.org/abs/2110.13218">Search for long-lived particles produced in association with a Z boson in proton-proton collisions at &radic;s = 13 TeV</a>
-          <span class="meta"><span class="role">Analysis lead</span> CMS Collaboration &middot; <em>JHEP</em> 03 (2022) 160 &middot; arXiv:2110.13218</span>
-        </div>
-        <div class="pub">
-          <a class="t" href="https://arxiv.org/abs/2107.04838">Search for long-lived particles decaying in the CMS end cap muon detectors in proton-proton collisions at &radic;s = 13 TeV</a>
-          <span class="meta">CMS Collaboration &middot; <em>Phys. Rev. Lett.</em> 127, 261804 (2021) &middot; arXiv:2107.04838</span>
-        </div>
-        <div class="pub">
-          <a class="t" href="https://arxiv.org/abs/2405.13778">Dark sector searches with the CMS experiment</a>
-          <span class="meta">CMS Collaboration &middot; <em>Phys. Rept.</em> 1115, 448 (2025) &middot; arXiv:2405.13778</span>
-        </div>
-        <div class="pub">
-          <a class="t" href="https://arxiv.org/abs/2212.05081">FAIR AI models in high energy physics</a>
-          <span class="meta">J. Duarte <em>et al.</em> &middot; <em>Mach. Learn.: Sci. Technol.</em> 4, 045062 (2023) &middot; arXiv:2212.05081</span>
-        </div>
-        <div class="pub">
-          <a class="t" href="https://arxiv.org/abs/2406.19522">Reliable edge machine learning hardware for scientific applications</a>
-          <span class="meta">T. Baldi <em>et al.</em> &middot; 2024 IEEE VLSI Test Symposium (VTS) &middot; arXiv:2406.19522</span>
-        </div>
-
-        <p class="note">CMS papers carry the full collaboration as authors; analyses I led are marked. Full list on <a href="https://inspirehep.net/authors/1615062">INSPIRE-HEP</a>.</p>
+        <h2>Students and teaching</h2>
+        <p>Eighteen students have worked with me: graduate, undergraduate, postbaccalaureate and high school. They have built neural-network, graph-network and boosted-decision-tree taggers, worked on analyses and produced results that appear in CMS publications. Two graduate students and an undergraduate worked on the B-parking search under my supervision.</p>
+        <p>I teach machine learning, triggers and jet substructure in the Hands-On Advanced Tutorial Sessions (HATS) at the Fermilab LPC, have taught at the CMS Data Analysis School, and co-organized an <code>hls4ml</code> tutorial at the 2022 Snowmass summer meeting in Seattle. I chair the US CMS Mentorship Committee and serve on committees of <a href="https://a3d3.ai">A3D3</a>, the NSF institute for Accelerated AI Algorithms for Data-Driven Discovery. I am always glad to hear from students looking for a way into this field.</p>
       </section>
-
       <section>
         <h2>Recent</h2>
         <dl class="news">
           <div>
             <dt>Jan 2026</dt>
             <dd>Our search for b-hadron decays to long-lived particles in the CMS endcap muon detectors is published in <em>Physical Review D</em> (<a href="https://arxiv.org/abs/2508.06363">arXiv:2508.06363</a>).</dd>
+          </div>
+          <div>
+            <dt>Dec 2025</dt>
+            <dd>Co-authored the paper describing hls4ml, the open-source tool that translates neural networks into hardware designs for FPGAs (<a href="https://arxiv.org/abs/2512.01463">arXiv:2512.01463</a>).</dd>
           </div>
           <div>
             <dt>Aug 2025</dt>
@@ -211,18 +260,6 @@
         </dl>
       </section>
     </div>
-
-    <section>
-      <h2>Students</h2>
-      <div class="grid-2">
-        <div>
-          <p>Eighteen students have worked with me: graduate, undergraduate, postbaccalaureate and high school. They have built taggers, worked on analyses and produced results that appear in CMS publications. Two graduate students and an undergraduate worked on the B-parking search under my supervision.</p>
-        </div>
-        <div>
-          <p>I teach in the Hands-On Advanced Tutorial Sessions (HATS) at the Fermilab LPC, on triggers, machine learning and jet substructure, and have taught at the CMS Data Analysis School. I chair the US CMS Mentorship Committee and I am always glad to hear from students looking for a way into this field.</p>
-        </div>
-      </div>
-    </section>
 
   </main>
 </div>

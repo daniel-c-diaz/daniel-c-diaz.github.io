@@ -17,14 +17,17 @@ A sticky identity rail on the left (photo, name, links, "previously") beside a
 wide content column that uses the full browser width rather than a narrow
 centred measure:
 
-- **Intro**: narrative, not a summary of credentials
-- **What I work on**: four research blocks, two across on wide screens
-- **Selected work | Recent**: side by side, papers left, news right
-- **Students**: two columns of prose
+- **Intro**: the physics motivation, then machine learning as the method throughout
+- **Machine learning**: four blocks (real-time ML on FPGAs, ML for LLP searches,
+  graph neural networks and interpretability, AI infrastructure and FAIR)
+- **Searches for new physics**: two blocks (tracker and muon-system LLPs, B-parking)
+- **One event**: the EXO-20-003 event display
+- **Selected work**: two columns, Machine learning and Physics
+- **Students and teaching | Recent**: side by side
 
-Deliberately *not* here: education tables, service lists, talk lists, teaching
-tables. That material lives in the CV PDF, which is linked from the rail. The
-page is meant to say what the work is, not to enumerate the record.
+The page is pitched at HEP + AI/ML faculty searches, so machine learning comes
+before the physics sections and gets equal weight in the publication list. Every
+claim is sourced from a paper, the CV or research statement, or a CMS page.
 
 Breakpoints account for the 280 px rail, not just the viewport. The
 `Selected work | Recent` split only goes two-up at 75 rem, because below that
