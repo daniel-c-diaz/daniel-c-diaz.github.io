@@ -34,7 +34,6 @@
   "sameAs": [
     "https://orcid.org/0000-0001-6834-1176",
     "https://inspirehep.net/authors/1615062",
-    "https://scholar.google.com/citations?user=hcg9zOUAAAAJ",
     "https://github.com/ddiaz006",
     "https://www.linkedin.com/in/daniel-c-diaz"
   ]
@@ -58,7 +57,6 @@
         <li><a href="mailto:d4diaz@ucsd.edu">Email</a></li>
         <li><a href="assets/CV_DanielDiaz.pdf">CV</a></li>
         <li><a href="https://inspirehep.net/authors/1615062">INSPIRE</a></li>
-        <li><a href="https://scholar.google.com/citations?user=hcg9zOUAAAAJ">Scholar</a></li>
         <li><a href="https://orcid.org/0000-0001-6834-1176">ORCID</a></li>
         <li><a href="https://github.com/ddiaz006">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/daniel-c-diaz">LinkedIn</a></li>
@@ -83,21 +81,21 @@
 
     <div class="intro">
       <div class="text">
-      <p class="lede">Most of what the LHC produces is thrown away a millionth of a second after it happens. I work on the possibility that something important is in what we discard.</p>
+      <p class="lede">Most searches at the LHC assume that a new particle decays the instant it is produced. My research is about the particles that don't.</p>
 
-      <p>Every general-purpose search at the LHC assumes a new particle decays essentially the instant it is made. That assumption is built into the triggers, the reconstruction and the analyses. Many models suggest that dark matter reaches the Standard Model through a narrow portal. If it does, the coupling is feeble, and a feeble coupling means a long life. The particle survives long enough to cross part of the detector before it decays, and it leaves a signature that our instruments are specifically configured to reject as noise.</p>
+      <p>Many dark sector models connect to the Standard Model through a weak portal, and a weak coupling usually means a long lifetime. Such a particle can travel millimetres to metres before it decays, leaving displaced vertices, delayed or trackless jets, or showers deep in the detector. Standard triggers and reconstruction are optimized for decays at the collision point, so these signatures are easy to lose.</p>
 
-      <p>My work is about closing that gap: designing searches for decays that happen centimetres, metres, or tens of metres from the collision point, and building the real-time algorithms that keep those events in the first place.</p>
+      <p>My work addresses this in two ways: searches designed for those displaced signatures, and machine-learning algorithms for the real-time trigger so that such events are recorded in the first place.</p>
       </div>
 
       <figure class="fig">
-        <img src="assets/img/decay-map.svg" alt="Cross-section of one quadrant of the CMS detector with 300 simulated long-lived particle decays at a proper lifetime of one metre, coloured by the detector region that could observe them." width="360" height="250" loading="lazy">
-        <figcaption><b>Where a long-lived particle decays.</b> One quadrant of CMS, to scale. Each dot is a simulated decay of a particle living c&tau;&nbsp;=&nbsp;1&nbsp;m; the colour shows which part of the detector could see it. Roughly a third leave no signature at all.</figcaption>
+        <img src="assets/img/decay-map.svg" alt="Toy simulation in one quadrant of the CMS detector: 300 decays of a 15 GeV long-lived scalar from Higgs boson decays, with a proper decay length of one metre, coloured by the detector region that contains each decay." width="360" height="250" loading="lazy">
+        <figcaption><b>Where a long-lived particle decays.</b> A toy simulation in one quadrant of CMS, approximately to scale: 300 decays of a 15&nbsp;GeV scalar from Higgs boson decays, with proper decay length c&tau;&nbsp;=&nbsp;1&nbsp;m. Colour shows the detector region containing each decay. About a third fall outside all of them, in uninstrumented material or beyond the detector.</figcaption>
         <ul class="key">
           <li><i style="background:#0284c7"></i>Tracker</li>
           <li><i style="background:#c2740a"></i>Calorimeters</li>
           <li><i style="background:#db2777"></i>Muon detectors</li>
-          <li><i style="background:#94a3b8"></i>Escapes</li>
+          <li><i style="background:#94a3b8"></i>Elsewhere</li>
         </ul>
       </figure>
     </div>
@@ -107,19 +105,19 @@
       <div class="grid-2">
         <div>
           <h3>Searches for long-lived particles</h3>
-          <p>I led a CMS search for particles decaying to displaced jets inside the tracker, which set some of the first limits on Higgs-portal long-lived particles below 20 GeV. Then, with collaborators, I helped develop a very different approach: treating the endcap muon detectors as a sampling calorimeter, where a decay in the steel produces a dense shower that essentially nothing in the Standard Model imitates. That opened up lifetimes where a particle travels hundreds of metres, a regime no tracker-based search can reach.</p>
+          <p>I led a CMS search for long-lived particles produced in association with a Z boson and decaying to displaced jets in the tracker. Triggering on the Z improved the sensitivity to light particles, down to about 15 GeV, compared with searches in gluon fusion. I also helped develop a different approach that uses the endcap muon detectors as a sampling calorimeter: the decay products of a long-lived particle shower in the steel and leave a dense cluster of hits, with very little Standard Model background. The first search using this method set the most stringent limits at the time on Higgs boson decays to long-lived particles with proper decay lengths above roughly 6 to 40 m, depending on the mass.</p>
         </div>
         <div>
           <h3>Machine learning inside the trigger</h3>
-          <p>The LHC collides protons forty million times a second and keeps a few hundred of those events. The decision is made in microseconds by custom electronics, and what it rejects is gone permanently. I build and deploy neural networks at that layer, including displaced-jet taggers and learned missing-energy algorithms running on FPGAs with <code>hls4ml</code>. That way the signatures I am looking for survive long enough for anyone to study them.</p>
+          <p>At the LHC, bunches of protons cross 40 million times a second. The Level-1 trigger, built from custom electronics, has a few microseconds to decide which crossings to keep and cuts the rate to about 100,000 per second; software then keeps about a thousand. Anything rejected is gone. I develop neural networks for the Level-1 trigger, including displaced-jet taggers and learned missing-energy algorithms, and test them on FPGAs using <code>hls4ml</code>, so that the signatures I search for are not discarded before anyone can study them.</p>
         </div>
         <div>
-          <h3>A new dataset for the low-mass frontier</h3>
-          <p>Most recently I have led an analysis of the CMS B-parking dataset: billions of recorded b-hadron decays, collected for an entirely different purpose. Because b-hadrons are produced copiously and decay to light states, that dataset reaches dark-sector mediators too light for any standard trigger to have kept. I built the analysis framework and the background estimate, and supervised the students who carried it through.</p>
+          <h3>Light long-lived particles in B-parking data</h3>
+          <p>Most recently I led a search in the 2018 CMS B-parking dataset, about ten billion b-hadron decays recorded for B physics. Because b hadrons are produced in pairs, one can fire the trigger while the other decays without any trigger bias, which makes the dataset sensitive to light particles produced in b-hadron decays. The search set the most stringent limits to date on B&nbsp;&rarr;&nbsp;K&Phi; decays, where &Phi; is a long-lived particle of 0.3 to 3&nbsp;GeV that decays to hadrons. I built the analysis framework and the background estimate, and supervised two graduate students and an undergraduate on the analysis.</p>
         </div>
         <div>
           <h3>Research computing and FAIR practice</h3>
-          <p>At SDSC I work on the large-scale AI and computing infrastructure that data-intensive science runs on, including the National Research Platform. It connects back to the physics through one conviction: a trained model is a scientific result and ought to behave like one. Through FAIR4HEP I helped write the community standards for making AI models in high energy physics findable, accessible, interoperable and reusable.</p>
+          <p>At SDSC I work on the large-scale AI and computing infrastructure that data-intensive science runs on, including the National Research Platform. It connects back to the physics through one conviction: a trained model is a scientific result and ought to behave like one. Through the FAIR4HEP project I helped develop a guide for making AI models in high energy physics findable, accessible, interoperable and reusable.</p>
         </div>
       </div>
     </section>
@@ -129,7 +127,7 @@
       <figure class="ed">
         <div class="ed-frame" id="ed-frame">
           <img class="ed-poster" src="assets/img/event-display.png"
-               alt="CMS event display: a Higgs boson candidate produced with a Z boson. Two green tracks are the electrons from the Z decay; yellow cones are jets from long-lived particles decaying away from the collision point."
+               alt="CMS event display of a candidate event: two green electron tracks consistent with a Z boson decay, and two yellow jet cones containing tracks from secondary vertices displaced from the collision point."
                width="750" height="673">
           <button class="ed-play" type="button" id="ed-play"
                   aria-label="Load the interactive 3D event display from CERN">
@@ -141,7 +139,7 @@
           </button>
         </div>
         <figcaption>
-          <b>A candidate event from the search I led.</b> Real data recorded by CMS on 8 August 2017 (run 300636). A Z boson decays to an electron&ndash;positron pair (green); the Higgs boson decays to two long-lived particles that travel before decaying into jets (yellow cones), leaving secondary vertices displaced from the collision point.
+          <b>A candidate event from the search I led.</b> Real data recorded by CMS on 8 August 2017 (run 300636). Two electrons (green) are consistent with a Z boson decay, and two jets (yellow cones) contain tracks from secondary vertices displaced from the collision point, the signature expected if a Higgs boson decayed to two long-lived particles. The search found no excess over the expected background.
           <span class="credit">Image and 3D display by the CMS Collaboration for <a href="http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/EXO-20-003/index.html">EXO&#8209;20&#8209;003</a> &middot; <a href="https://cms3d.web.cern.ch/EXO-20-003/">interactive version</a> &middot; <a href="https://cms.cern/news/live-long-and-prosper-searching-long-lived-relatives-higgs-boson">CMS feature</a> &middot; paper: <a href="https://arxiv.org/abs/2110.13218">arXiv:2110.13218</a></span>
         </figcaption>
       </figure>
@@ -153,31 +151,31 @@
 
         <div class="pub">
           <a class="t" href="https://arxiv.org/abs/2508.06363">Search for b-hadron decays to long-lived particles in the CMS endcap muon detectors</a>
-          <span class="meta"><span class="role">Analysis lead</span> CMS Collaboration &middot; <em>Phys. Rev. D</em>, 2026 &middot; arXiv:2508.06363</span>
+          <span class="meta"><span class="role">Analysis lead</span> CMS Collaboration &middot; <em>Phys. Rev. D</em> 113, 012009 (2026) &middot; arXiv:2508.06363</span>
         </div>
         <div class="pub">
-          <a class="t" href="https://arxiv.org/abs/2402.01898">Search for long-lived particles decaying in the CMS muon detectors at &radic;s = 13 TeV</a>
-          <span class="meta">CMS Collaboration &middot; <em>Phys. Rev. D</em> 110, 032007, 2024 &middot; arXiv:2402.01898</span>
+          <a class="t" href="https://arxiv.org/abs/2402.01898">Search for long-lived particles decaying in the CMS muon detectors in proton-proton collisions at &radic;s = 13 TeV</a>
+          <span class="meta">CMS Collaboration &middot; <em>Phys. Rev. D</em> 110, 032007 (2024) &middot; arXiv:2402.01898</span>
         </div>
         <div class="pub">
-          <a class="t" href="https://arxiv.org/abs/2110.13218">Search for long-lived particles produced in association with a Z boson at &radic;s = 13 TeV</a>
+          <a class="t" href="https://arxiv.org/abs/2110.13218">Search for long-lived particles produced in association with a Z boson in proton-proton collisions at &radic;s = 13 TeV</a>
           <span class="meta"><span class="role">Analysis lead</span> CMS Collaboration &middot; <em>JHEP</em> 03 (2022) 160 &middot; arXiv:2110.13218</span>
         </div>
         <div class="pub">
-          <a class="t" href="https://arxiv.org/abs/2107.04838">Search for long-lived particles decaying in the CMS end cap muon detectors at &radic;s = 13 TeV</a>
-          <span class="meta">CMS Collaboration &middot; <em>Phys. Rev. Lett.</em> 127, 261804, 2021 &middot; arXiv:2107.04838</span>
+          <a class="t" href="https://arxiv.org/abs/2107.04838">Search for long-lived particles decaying in the CMS end cap muon detectors in proton-proton collisions at &radic;s = 13 TeV</a>
+          <span class="meta">CMS Collaboration &middot; <em>Phys. Rev. Lett.</em> 127, 261804 (2021) &middot; arXiv:2107.04838</span>
         </div>
         <div class="pub">
           <a class="t" href="https://arxiv.org/abs/2405.13778">Dark sector searches with the CMS experiment</a>
-          <span class="meta">CMS Collaboration &middot; <em>Physics Reports</em>, 2025 &middot; arXiv:2405.13778</span>
+          <span class="meta">CMS Collaboration &middot; <em>Phys. Rept.</em> 1115, 448 (2025) &middot; arXiv:2405.13778</span>
         </div>
         <div class="pub">
           <a class="t" href="https://arxiv.org/abs/2212.05081">FAIR AI models in high energy physics</a>
-          <span class="meta">J. Duarte <em>et al.</em> &middot; <em>Mach. Learn.: Sci. Technol.</em>, 2023 &middot; arXiv:2212.05081</span>
+          <span class="meta">J. Duarte <em>et al.</em> &middot; <em>Mach. Learn.: Sci. Technol.</em> 4, 045062 (2023) &middot; arXiv:2212.05081</span>
         </div>
         <div class="pub">
           <a class="t" href="https://arxiv.org/abs/2406.19522">Reliable edge machine learning hardware for scientific applications</a>
-          <span class="meta">T. Baldi <em>et al.</em> &middot; IEEE VLSI Test Symposium, 2024 &middot; arXiv:2406.19522</span>
+          <span class="meta">T. Baldi <em>et al.</em> &middot; 2024 IEEE VLSI Test Symposium (VTS) &middot; arXiv:2406.19522</span>
         </div>
 
         <p class="note">CMS papers carry the full collaboration as authors; analyses I led are marked. Full list on <a href="https://inspirehep.net/authors/1615062">INSPIRE-HEP</a>.</p>
@@ -187,7 +185,7 @@
         <h2>Recent</h2>
         <dl class="news">
           <div>
-            <dt>Sep 2025</dt>
+            <dt>Jan 2026</dt>
             <dd>Our search for b-hadron decays to long-lived particles in the CMS endcap muon detectors is published in <em>Physical Review D</em> (<a href="https://arxiv.org/abs/2508.06363">arXiv:2508.06363</a>).</dd>
           </div>
           <div>
@@ -199,12 +197,12 @@
             <dd>Began a term as co-convener of the CMS Machine Learning Knowledge subgroup.</dd>
           </div>
           <div>
-            <dt>2025</dt>
-            <dd>The CMS Collaboration received the Breakthrough Prize in Fundamental Physics.</dd>
-          </div>
-          <div>
             <dt>Jun 2025</dt>
             <dd>Invited talk on muon detector showers with the B-parking dataset, Valencia.</dd>
+          </div>
+          <div>
+            <dt>Apr 2025</dt>
+            <dd>The CMS Collaboration, together with ALICE, ATLAS and LHCb, received the 2025 Breakthrough Prize in Fundamental Physics.</dd>
           </div>
           <div>
             <dt>Feb &amp; Mar 2025</dt>
@@ -218,10 +216,10 @@
       <h2>Students</h2>
       <div class="grid-2">
         <div>
-          <p>Eighteen students have worked with me: graduate, undergraduate, postbaccalaureate and high school. They built the taggers, ran the analyses and produced results that appear in CMS publications; the B-parking search in particular was carried by two graduate students and an undergraduate I supervised.</p>
+          <p>Eighteen students have worked with me: graduate, undergraduate, postbaccalaureate and high school. They have built taggers, worked on analyses and produced results that appear in CMS publications. Two graduate students and an undergraduate worked on the B-parking search under my supervision.</p>
         </div>
         <div>
-          <p>I teach at the Fermilab Hands-On Advanced Tutorial series on triggers, machine learning and jet substructure, and at the CMS Data Analysis School. I chair the US CMS Mentorship Committee and I am always glad to hear from students looking for a way into this field.</p>
+          <p>I teach in the Hands-On Advanced Tutorial Sessions (HATS) at the Fermilab LPC, on triggers, machine learning and jet substructure, and have taught at the CMS Data Analysis School. I chair the US CMS Mentorship Committee and I am always glad to hear from students looking for a way into this field.</p>
         </div>
       </div>
     </section>
