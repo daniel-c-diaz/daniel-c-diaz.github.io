@@ -63,8 +63,8 @@ no flash.
 
 ## Publish
 
-Live at **https://ddiaz006.github.io**, served by GitHub Pages from `main`
-of the `ddiaz006/ddiaz006.github.io` repository. Push to `main` and the site
+Live at **https://daniel-c-diaz.github.io**, served by GitHub Pages from `main`
+of the `daniel-c-diaz/daniel-c-diaz.github.io` repository. Push to `main` and the site
 updates within a minute or two.
 
 ## Keeping it current
