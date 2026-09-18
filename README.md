@@ -63,16 +63,9 @@ no flash.
 
 ## Publish
 
-```bash
-gh repo create ddiaz-site-slim --public --source=. --remote=origin --push
-```
-
-Then **Settings → Pages → Deploy from a branch → `main` / `(root)`**. It lands
-at `https://ddiaz006.github.io/ddiaz-site-slim/`.
-
-To make it the main site, rename the repository to `ddiaz006.github.io`. Every
-path is relative, so it works at either address. Update the `canonical` and
-`og:url` tags in `index.html` if you do.
+Live at **https://ddiaz006.github.io**, served by GitHub Pages from `main`
+of the `ddiaz006/ddiaz006.github.io` repository. Push to `main` and the site
+updates within a minute or two.
 
 ## Keeping it current
 
