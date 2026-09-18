@@ -29,7 +29,7 @@
   "image": "https://ddiaz006.github.io/ddiaz-site-slim/assets/img/portrait.jpg",
   "affiliation": { "@type": "Organization", "name": "San Diego Supercomputer Center, University of California San Diego" },
   "email": "mailto:d4diaz@ucsd.edu",
-  "knowsAbout": ["High energy physics", "Machine learning", "Graph neural networks", "Real-time machine learning", "FPGAs", "hls4ml", "Anomaly detection", "Explainable AI", "FAIR data and AI models", "Large language model infrastructure", "Long-lived particles", "Dark sectors", "CMS experiment", "Level-1 trigger"],
+  "knowsAbout": ["High energy physics", "Machine learning", "Graph neural networks", "Real-time machine learning", "FPGAs", "hls4ml", "Anomaly detection", "Explainable AI", "FAIR data and AI models", "Large language model infrastructure", "AI agents", "Retrieval-augmented generation", "Kubernetes", "Long-lived particles", "Dark sectors", "CMS experiment", "Level-1 trigger"],
   "identifier": { "@type": "PropertyValue", "propertyID": "ORCID", "value": "0000-0001-6834-1176" },
   "sameAs": [
     "https://orcid.org/0000-0001-6834-1176",
@@ -113,7 +113,7 @@
         </div>
         <div>
           <h3>Real-time machine learning</h3>
-          <p>The CMS Level-1 trigger has a few microseconds to decide which of 40 million bunch crossings per second to keep, so any model running there has to fit in FPGA firmware. During my postdoc I started work on the Phase-2 upgrade of this trigger and set up an FPGA test stand at UC San Diego. I led a team of graduate and undergraduate students developing a convolutional neural network that tags long-lived particle decays in the tracker and calorimeters, and we used deep neural networks to improve the real-time calculation of missing transverse energy. The models are compiled to firmware with <code>hls4ml</code> and iterated until they meet the trigger's latency and resource limits.</p>
+          <p>The CMS Level-1 trigger has a few microseconds to decide which of 40 million bunch crossings per second to keep, so any model running there has to fit in FPGA firmware. I set up an FPGA test stand at UC San Diego and led a team of students developing a convolutional neural network that tags long-lived particle decays in the tracker and calorimeters; we also used deep neural networks to improve the real-time calculation of missing transverse energy, with models compiled to firmware using <code>hls4ml</code>. I am now co-PI of AIDA-Scout, a DOE-funded project on AI for real-time anomaly detection in the CMS Level-1 scouting system.</p>
         </div>
         <div>
           <h3>Machine learning for physics analysis</h3>
@@ -121,7 +121,7 @@
         </div>
         <div>
           <h3>AI infrastructure for science</h3>
-          <p>At the San Diego Supercomputer Center I operate large-scale, Kubernetes-based analysis infrastructure on the National Research Platform, including self-hosted open-weight large language models, for a broad community of scientists with ML- and data-intensive workflows. I also develop tutorials on running AI workloads there; much of this work is on my <a href="https://gitlab.nrp-nautilus.io/ddiaz">NRP GitLab</a>. Through the FAIR4HEP project I helped develop guidance for making AI models and datasets in high energy physics findable, accessible, interoperable and reusable. A trained model is a scientific result and ought to behave like one.</p>
+          <p>At the San Diego Supercomputer Center I operate large-scale, Kubernetes-based analysis infrastructure on the National Research Platform, including self-hosted open-weight large language models, for a broad community of scientists with ML- and data-intensive workflows. I also teach hands-on training on the platform, covering Kubernetes, hosted LLMs, retrieval-augmented generation and AI agents; the materials are at <a href="https://training.nrp-nautilus.io">training.nrp-nautilus.io</a> and much of the code is on my <a href="https://gitlab.nrp-nautilus.io/ddiaz">NRP GitLab</a>. Through the FAIR4HEP project I helped develop guidance for making AI models and datasets in high energy physics findable, accessible, interoperable and reusable.</p>
         </div>
       </div>
     </section>
@@ -194,6 +194,14 @@
         <h2>Recent</h2>
         <dl class="news">
           <div>
+            <dt>Sep 2026</dt>
+            <dd>At the <a href="https://indico.global/event/18639/">CLARIPHY</a> AI collaboration meeting, taught a three-hour tutorial on AI agents and LLMs for scientific discovery, gave a plenary talk on the NRP, co-convened the computing infrastructure session and co-authored the AIDA-Scout poster.</dd>
+          </div>
+          <div>
+            <dt>Jun&ndash;Aug 2026</dt>
+            <dd>Taught six <a href="https://training.nrp-nautilus.io">NRP trainings and webinars</a> on Kubernetes, hosted LLMs and AI agents, including at PEARC26, the Fermilab LPC HATS and the CRA/NAIRR AI Education webinar series, and spoke on NRP&rsquo;s hosted LLM service at the REN Makerspace call.</dd>
+          </div>
+          <div>
             <dt>Jan 2026</dt>
             <dd>Our search for b-hadron decays to long-lived particles in the CMS endcap muon detectors is published in <em>Physical Review D</em> (<a href="https://arxiv.org/abs/2508.06363">arXiv:2508.06363</a>).</dd>
           </div>
@@ -229,10 +237,10 @@
       <h2>Students and teaching</h2>
       <div class="grid-2">
         <div>
-          <p>Eighteen students have worked with me: graduate, undergraduate, postbaccalaureate and high school. They have built neural-network, graph-network and boosted-decision-tree taggers, worked on analyses and produced results that appear in CMS publications. Two graduate students and an undergraduate worked on the B-parking search under my supervision.</p>
+          <p>Eighteen students have worked with me: graduate, undergraduate, postbaccalaureate and high school. They have built neural-network, graph-network and boosted-decision-tree taggers, worked on analyses and produced results that appear in CMS publications. Two graduate students and an undergraduate worked on the B-parking search under my supervision. From 2023 to 2025 I chaired the US CMS Mentorship Committee, and I serve on the Equity and Career Committee of <a href="https://a3d3.ai">A3D3</a>, the NSF institute for Accelerated AI Algorithms for Data-Driven Discovery.</p>
         </div>
         <div>
-          <p>I teach machine learning, triggers and jet substructure in the Hands-On Advanced Tutorial Sessions (HATS) at the Fermilab LPC, have taught at the CMS Data Analysis School, and co-organized an <code>hls4ml</code> tutorial at the 2022 Snowmass summer meeting in Seattle. I chair the US CMS Mentorship Committee and serve on committees of <a href="https://a3d3.ai">A3D3</a>, the NSF institute for Accelerated AI Algorithms for Data-Driven Discovery. I am always glad to hear from students looking for a way into this field.</p>
+          <p>I teach machine learning, triggers and jet substructure in the Hands-On Advanced Tutorial Sessions (HATS) at the Fermilab LPC, have taught at the CMS Data Analysis School, and co-organized an <code>hls4ml</code> tutorial at the 2022 Snowmass summer meeting in Seattle. For the National Research Platform I teach researchers, students and faculty to run AI workloads, including hosted LLMs and AI agents, in seven hands-on trainings and webinars in 2026. I am always glad to hear from students looking for a way into this field.</p>
         </div>
       </div>
     </section>
