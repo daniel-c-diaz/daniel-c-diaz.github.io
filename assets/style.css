@@ -1,4 +1,4 @@
-/* Daniel Diaz — personal site.
+/* Daniel Diaz, personal site.
    Sticky identity rail on the left, wide multi-column content on the right. */
 
 :root {
@@ -61,7 +61,7 @@ p:last-child { margin-bottom: 0; }
 
 /* ============ rail ============ */
 .rail img.portrait {
-  /* height:auto is required — the width/height attributes otherwise set a
+  /* height:auto is required: the width/height attributes otherwise set a
      literal 800px height that beats aspect-ratio. */
   width: 100%; height: auto; max-width: 15rem;
   aspect-ratio: 1; object-fit: cover;

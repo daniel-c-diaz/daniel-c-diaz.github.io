@@ -17,22 +17,22 @@ A sticky identity rail on the left (photo, name, links, "previously") beside a
 wide content column that uses the full browser width rather than a narrow
 centred measure:
 
-- **Intro** — narrative, not a summary of credentials
-- **What I work on** — four research blocks, two across on wide screens
-- **Selected work | Recent** — side by side, papers left, news right
-- **Students** — two columns of prose
+- **Intro**: narrative, not a summary of credentials
+- **What I work on**: four research blocks, two across on wide screens
+- **Selected work | Recent**: side by side, papers left, news right
+- **Students**: two columns of prose
 
 Deliberately *not* here: education tables, service lists, talk lists, teaching
 tables. That material lives in the CV PDF, which is linked from the rail. The
 page is meant to say what the work is, not to enumerate the record.
 
-Breakpoints account for the 280 px rail, not just the viewport — the
+Breakpoints account for the 280 px rail, not just the viewport. The
 `Selected work | Recent` split only goes two-up at 75 rem, because below that
 the content column is too narrow for two readable columns.
 
 ## The event display
 
-The "One event" band shows a real CMS event from EXO-20-003 -- the search Daniel
+The "One event" band shows a real CMS event from EXO-20-003, the search Daniel
 led. It is a **click-to-load facade**: the page ships a static poster
 (`assets/img/event-display.png`, the figure CMS published) and only loads
 CERN's live 3D viewer at <https://cms3d.web.cern.ch/EXO-20-003/> when the
@@ -45,7 +45,7 @@ That is deliberate, for three reasons:
 - no third-party request or cookie until the visitor opts in;
 - CMS's viewer overlays two blocks of text sized for a desktop window, and they
   collide with each other below roughly 960 px. It is cross-origin, so it cannot
-  be restyled from here -- below 960 px the button opens it in a new tab instead
+  be restyled from here. Below 960 px the button opens it in a new tab instead
   of embedding it.
 
 Nothing from CERN is rehosted except the published poster image, which is
@@ -82,7 +82,7 @@ Then **Settings → Pages → Deploy from a branch → `main` / `(root)`**. It l
 at `https://ddiaz006.github.io/ddiaz-site-slim/`.
 
 To make it the main site, rename the repository to `ddiaz006.github.io`. Every
-path is relative, so it works at either address — update the `canonical` and
+path is relative, so it works at either address. Update the `canonical` and
 `og:url` tags in `index.html` if you do.
 
 ## Keeping it current
